@@ -1,6 +1,9 @@
 # scrapy-patchwright: Patchright integration for Scrapy
 
-[![version](https://img.shields.io/pypi/v/scrapy-patchwright.svg)](https://pypi.python.org/pypi/scrapy-playfox)
+![version](https://img.shields.io/pypi/v/scrapy-patchwright.svg)
+![Scrapy: 2.14+](https://img.shields.io/badge/Scrapy-2.14+-blue)
+![version](https://img.shields.io/badge/scrapy--playwright-v0.0.46+-darkcyan)
+![version](https://img.shields.io/badge/Python-3.12+-blue)
 
 scrapy-patchwright is a [scrapy-patchwright](https://github.com/scrapy-plugins/scrapy-patchwright) variant version using [patchright](https://github.com/Kaliiiiiiiiii-Vinyzu/patchright-python) that become browser stealth against those anti-bot websites.
 
