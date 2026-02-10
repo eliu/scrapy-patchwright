@@ -6,7 +6,7 @@ scrapy-patchwright is a [scrapy-patchwright](https://github.com/scrapy-plugins/s
 
 ## Installation
 
-`scrapy-playfox` is available on PyPI and can be installed with `pip`:
+`scrapy-patchwright` is available on PyPI and can be installed with `pip`:
 
 ```shell
 pip install scrapy-patchwright
@@ -70,18 +70,15 @@ This is the default in new projects since [Scrapy 2.7](https://github.com/scrap
 This is the commonly use case in your spider. Learn more from scrapy-patchwright documentations.
 
 ```python
-from browserforge.fingerprints import Screen
-
 custom_settings = {
     'PLAYWRIGHT_PROCESS_REQUEST_HEADERS': None, # This is mandatory!
     'PLAYWRIGHT_LAUNCH_OPTIONS': {
         'headless': False,
         'channel': 'chrome',
-        'no_viewport': True,
     },
     'PLAYWRIGHT_CONTEXTS': {
         'persistent': {
-            'user_data_dir': 'patchright_data',
+            'user_data_dir': 'playwright_data',
             'ignore_https_errors': True,
         }
     }
@@ -90,7 +87,7 @@ custom_settings = {
 
 ## Basic Usage
 
-Same as [scrapy-patchwright](https://github.com/scrapy-plugins/scrapy-patchwright?tab=readme-ov-file#basic-usage).
+Same as [scrapy-playwright](https://github.com/scrapy-plugins/scrapy-playwright?tab=readme-ov-file#basic-usage).
 
 ```python
 import scrapy
@@ -100,12 +97,12 @@ class MySpider(scrapy.Spider):
 
     def start_requests(self):
         # GET request
-        yield scrapy.Request("https://httpbin.org/get", meta={"patchright": True})
+        yield scrapy.Request("https://httpbin.org/get", meta={"playwright": True})
         # POST request
         yield scrapy.FormRequest(
             url="https://httpbin.org/post",
             formdata={"foo": "bar"},
-            meta={"patchright": True},
+            meta={"playwright": True},
         )
 
     def parse(self, response, **kwargs):
